@@ -34,6 +34,9 @@ app.get("/", (req, res) => {
   res.send("API Running...");
 });
 
+const cors = require("cors");
+app.use(cors());
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
